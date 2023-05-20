@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% include 'cdnlines.html' %}
+  </head>
+  <style>
+      table, th, td,thead,tbody,tr {border: 2px solid black;}
+      body{background-image:linear-gradient(90deg,#ed9b9b,#9b9bef,#f9f999,#85f385,#ffc0cb);}
+      .lucky{margin-top: 150px; border: 2px ridge black; border-radius: 10%; padding: 20px;}
+  </style>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="offset-md-3 col-md-5 lucky">
+          <h2 class="text-center mt-2 mb-2"> <b><u><i> Article Details  </i></u></b> </h2>
+        <table class="table text-center">
+          <thead>
+            <tr><td>id</td><td>Author</td><td>Title</td><td>content</td></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{{ post.id  }}</td><td>{{ post.author }}</td>
+              <td>{{ post.title }}</td><td>{{ post.body }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <div id="likes_section"> {% include 'likes.html' %} </div><br><br>
+        <center>
+          <a href="{% url 'post_edit' id=post.id %}" class="btn btn-primary ml-5 mr-4"> Edit </a>
+          <a href="{% url 'delete' id=post.id %}" class="btn btn-dark ">Delete</a>
+          <a href="{% url 'post_list' %}" class="btn btn-secondary ml-4">Go To Back</a>
+        </center><br><br>
+      <div class="text-right"> <a href="{% url 'comment' %}">Give Comment</a> </div>
+      
+     <!--  <form method="POST">
+          {% csrf_token %}
+          <textarea type="text" name='com' placeholder="comment.." ></textarea>
+          <input type="submit" class="btn btn-danger">
+        </form> -->
+        
+  
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+

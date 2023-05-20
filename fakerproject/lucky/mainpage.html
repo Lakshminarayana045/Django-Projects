@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Main</title>
+    {% include 'bootstrap.html' %}
+  </head>
+  <style media="screen">
+    .jumbotron{ margin:20px 70px 80px; }
+    h1{margin-top:20px}
+  </style>
+  <body>
+    <h1 class="text-center" style="background-color:powderblue"><b>Welcome To NTH Employees Information</b></h1>
+    <div class="jumbotron text-center">
+      <a class="btn btn-lg btn-outline-primary mr-5" href="{% url 'Hyderabad' %}">Hyderabad</a>
+      <a class="btn btn-lg btn-outline-secondary mr-5" href="{% url 'Pune' %}">Pune</a>
+      <a class="btn btn-lg btn-outline-success mr-5" href="{% url 'Bangalore' %}">Bangalore</a>
+      <a class="btn btn-lg btn-outline-danger" href="{% url 'Chenni' %}">Chennai</a>
+      <marquee><img src="{% static 'images/work.jpg' %}" style="width:20%; height:15%"></marquee>
+    </div>
+
+
+  </body>
+</html>

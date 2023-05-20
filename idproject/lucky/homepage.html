@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+    {% include 'bl.html' %}
+  </head>
+  <style>
+    a[name],body{background-image:linear-gradient(90deg,#808080,#F0E68C,#FAF0E6);}
+    div{background-image:linear-gradient(90deg,#00FFFF,blue,#D8BFD8);}
+    h1{color:white;text-shadow:0px 0px 30px blue}
+    
+  </style>
+  <body>
+  <marquee behavior="alternate" scrollamount=30>
+  <h1 class="mt-5"><b>Welcome To Narayana Tech House</b></h1></marquee>
+    <div class="container mt-3">
+      <div class="jumbotron mt-3">
+          {% if data %}
+          <div class="text-center">
+            {% for i in data %}
+                <a name="lucky" href="{% url 'details' i.id %}" class="btn mb-1">{{i.first_name}} {{i.last_name}}</a><br>
+            {% endfor %}
+          </div>
+          {% endif %}
+      </div>
+    </div>
+    <center>
+    <a href="{% url 'formpage' %}" class="btn btn-lg btn-outline-primary mt-5"><b>Add New Employee</b></a><br><br>
+  </center>
+  </body>
+</html>

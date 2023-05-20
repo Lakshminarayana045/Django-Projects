@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Fetch</title>
+    {% include 'bootstrap.html' %}
+  </head>
+  <body>
+    {% include 'navbar.html' %}
+    <marquee><h1 class="text-center bg-secondary">Employees Information</h1></marquee>
+    {% if 'nth' %}
+      <table class="table table-bordered bg-primary">
+        <thead>
+          <tr>
+            <th>ID NO</th>
+            <th>first_name</th>
+            <th>last_name</th>
+            <th>email</th>
+            <th>mobile</th>
+            <th>address</th>
+            <th>company</th>
+            <th>salary</th>
+            <th>location</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for i in nth %}
+            <tr>
+              <td>{{ i.id }}</td>
+              <td>{{ i.first_name }}</td>
+              <td>{{ i.last_name }}</td>
+              <td>{{ i.email }}</td>
+              <td>{{ i.mobile }}</td>
+              <td>{{ i.address }}</td>
+              <td>{{ i.company }}</td>
+              <td>{{ i.salary }}</td>
+              <td>{{ i.location }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <h1></h1>
+    {% endif %}
+  </body>
+</html>

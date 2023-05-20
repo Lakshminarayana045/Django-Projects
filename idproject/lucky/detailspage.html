@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% include 'bl.html' %}
+  </head>
+  <style media="screen">
+    body{background-image:linear-gradient(90deg,rgb(166, 215, 246),rgb(247, 140, 113),rgb(247, 148, 247),rgb(236, 195, 118));}
+    table{border:10px groove white;}
+  </style>
+  <body>
+    <div class="container-fluid">
+      <div class="offset-md-4 col-md-4">
+        <h3 class="text-white text-center mt-5 mb-4">{{data.first_name}} Details Are ..!!..</h3>
+        <table class="table text-white mb-3">
+          <tbody>
+            <tr><td>First Name:</td><td>{{data.first_name}}</td></tr>
+            <tr><td>Last Name:</td><td>{{data.last_name}}</td></tr>
+            <tr><td>Email_id</td><td>{{ data.email_id }}</td></tr>
+            <tr><td>Salary</td><td>{{ data.salary }}</td></tr>
+            <tr><td>Company</td><td>{{ data.company }}</td></tr>
+            <tr><td>Mobile No</td><td>{{ data.mobile }}</td></tr
+            <tr><td>Location</td><td>{{ data.locations }}</td></tr>
+          </tbody>
+        </table>
+          <div class="text-center mt-3">
+            <a href="{% url 'homepage' %}" class="btn btn-outline-light mr-2">Mainpage</a>
+            <a href="{% url 'delete' data.id %}" class="btn btn-outline-light">Delete This Employee</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>

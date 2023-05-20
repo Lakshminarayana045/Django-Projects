@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form</title>
+    {% include 'bl.html' %}
+  </head>
+  <style media="screen">
+    input:hover,a{background-color:#ffe6f2;box-shadow:0 0 10px red;}
+    form{border:10px outset pink;padding:10px;border-radius:10%;}
+  </style>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="offset-md-3 col-md-5">
+          <marquee><h1 class="text-center mt-2"><b>Add Employee Here</b></h1></marquee>
+          <form method="POST" class="mt-2">
+            {% csrf_token %}
+<div class="form-row">
+  <div class="form-group col-md-6">
+    <label>First Name</label>
+    <input type="text" class="form-control" name="fname">
+  </div>
+  <div class="form-group col-md-6">
+    <label>Last Name</label>
+    <input type="text" class="form-control" name="lname">
+  </div>
+</div>
+      <div class="form-group">
+        <label>Email Id</label>
+        <input type="email" class="form-control" name="email">
+      </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label>Company</label>
+                <input type="text" class="form-control" name="company">
+              </div>
+              <div class="form-group col-md-6">
+                <label>Salary</label>
+                <input type="number" class="form-control" name="salary">
+              </div>
+            </div>
+                  <div class="form-group">
+                    <label>Mobile No</label>
+                    <input type="number" class="form-control" name="mobile">
+                  </div>
+                          <div class="form-group">
+                            <label>Location</label>
+                            <input type="text" class="form-control" name="locations">
+                          </div>
+                <center>
+                <input type="submit" name="Submit" class="btn btn-outline-danger mr-2">
+                <input type="reset" name="Cancle" class="btn btn-outline-primary"><br>
+                <a href="{% url 'homepage' %}" class="btn btn-outline-secondary mt-2">Mainpage</a>
+              </center>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

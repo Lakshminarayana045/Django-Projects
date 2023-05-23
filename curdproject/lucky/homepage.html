@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Home</title>
+    {% include 'cdnlines.html' %}
+  </head>
+  <style media="screen">
+    h1{background-color:rgb(255, 99, 71);
+      border:10px groove blue;}
+  </style>
+  <body>
+    <h1><marquee>Welcome To NTH</marquee></h1>
+    <div class=" container-fluid text-right">
+      <a href="{% url "adddata" %}" class="btn btn-outline-danger text-right"> Registered </a>
+    </div>
+    <table class="table text-center">
+      {% if data %}
+      <thead>
+        <tr>
+          <th>first_name</th>
+          <th>Mobile</th>
+          <th>Gmail</th>
+          <th>location</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for i in data %}
+        <tr>
+          <td>{{ i.first_name }}</td>
+          <td>{{ i.mobile }}</td>
+          <td>{{ i.gmail }}</td>
+          <td>{{ i.location }}</td>
+          <td>
+            <a href="{% url 'update' i.id %}" class="btn btn-outline-info">Update</a>
+            <a href="{% url 'delete' i.id %}" class="btn btn-outline-dark">Delete</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% else %}
+    <h2 class="text-center" >No Data</h2>
+    {% endif %}
+  </body>
+</html>

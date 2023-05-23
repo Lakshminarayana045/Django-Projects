@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>UpdateData</title>
+    {% include "cdnlines.html" %}
+  </head>
+  <style>
+    form{border:10px black ridge; border-radius:30px;padding:30px; }
+    form,center,input{margin-top:20px}
+    input[value]{margin-left:30px}
+    a{margin-left:170px; margin-top:20px}
+  </style>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="offset-2 col-lg-6">
+          <form method="POST">
+            {% csrf_token %}
+            <h1 class="text-center">Update Form</h1>
+            <input type="text" name="fname" placeholder="First Name" class="form-control" value="{{lucky.first_name}}">
+            <input type="number" name="mob" placeholder="Mobile No" class="form-control" value="{{lucky.mobile}}">
+            <input type="email" name="gmail" placeholder="Gmail Id" class="form-control" value="{{lucky.gmail}}">
+            <input type="text" name="loc" placeholder="Location" class="form-control" value="{{lucky.location}}">
+            <center>
+            <input type="submit" value="UPDATE" class="btn btn-outline-warning">
+            <input type="reset" value="CANCLE" class="btn btn-outline-secondary">
+            </center>
+              <a href="{% url "homepage" %}" class="btn btn-outline-primary">Go To MainPage</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+<html>
+    <head>
+        <title>NTH</title>
+    </head>
+    <body>
+    
+    {% block content %}
+    <style>
+        .cls1{
+            color: red;
+        }
+    </style>
+
+    <h1 class="text-center cls1"> Online Classes </h1>
+        {% if services %}
+            <table class="table table-bordered text-center table-hover">
+                <thead> 
+                    <tr class="bg-dark text-white">
+                        <th> Course Name </th>
+                        <th> Course Fee </th>
+                        <th> Start Date </th>
+                        <th> Duration </th>
+                        <th> Trainer Name </th>
+                        <th> Trainer Exp </th>
+                    </tr>
+                </thead>
+                <tbody class="bg-light">
+                    {% for service in services %}
+                        <tr>
+                            <td> {{ service.course_name }} </td>
+                            <td> {{ service.course_fee }} </td>
+                            <td> {{ service.start_date }} </td>
+                            <td> {{ service.duration }} </td>
+                            <td> {{ service.trainer_name }} </td>
+                            <td> {{ service.trainer_exp }} </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+        <h2> No Courses Are Available </h1>
+        {% endif %}
+        <h1 class="text-center cls1"> Offline Classes </h1>
+        <h3 class="text-center"> We Dont Have Offline Classes Currently Due to Lockdown </h3>
+    
+    {% endblock %}
+    </body>
+</html>

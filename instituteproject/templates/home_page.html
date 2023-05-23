@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static %}
+<html>
+    <head>
+        <title>NTH</title>
+    </head>
+    <body>
+    {% block content %}
+        <h3 class="text-center text-danger"> About Founder </h3> 
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-2 text-right">
+                    <img src="{% static 'images/myimg.jpg' %}" style="hight:80%; width:80%;" >
+                </div>
+                
+                <div class="col-md-10">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="text-center text-danger"> About Institute </h3> 
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-md-2 text-right">
+                    <img src="{% static 'images/logo.png' %}" style="hight:80%; width:80%;" >
+                </div>
+                
+                <div class="col-md-10">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                </div>
+            </div>
+        </div>
+        <h3 class="text-center text-danger"> Our Team </h3> 
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header text-center bg-success text-white">
+                            <h1 class="card-title"> Mr. Narayana </h1>
+                        </div>
+                        <div class="card-body">
+                            <img src="{% static 'images/myimg.jpg' %}" style="width:100%; hight:100%;">
+                        </div>
+                        <div class="card-footer">
+                            <h4 class="text-success"> Education and Working Exp </h4>
+                                <ol>
+                                    <li> Completed Btech 2010 From ANU.</li>
+                                    <li> Worked in different Companies.</li>
+                                    <li> Started <b>NARAYANA Tech House</b>.</li>
+                                    <li> Giving Training on Python Full Stack</li>
+                                </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header text-center bg-success text-white">
+                            <h1 class="card-title"> Mr. Srinivas </h1>
+                        </div>
+                        <div class="card-body">
+                            <img src="{% static 'images/Srinu.png' %}" style="width:100%; hight:100%;">
+                        </div>
+                        <div class="card-footer">
+                            <h4 class="text-success"> Education and Working Exp </h4>
+                                <ol>
+                                    <li> Completed Btech 2012 From JNTU.</li>
+                                    <li> Worked in different Companies.</li>
+                                    <li> Started <b>NARAYANA Tech House</b>.</li>
+                                    <li> Giving Training on Python Full Stack</li>
+                                    <li> Giving Training on <b>REST API</b> and <b>UI</b></li>
+                                </ol>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header text-center bg-success text-white">
+                            <h1 class="card-title"> Mr. Anil </h1>
+                        </div>
+                        <div class="card-body">
+                            <img src="{% static 'images/myimg.jpg' %}" style="width:100%; hight:100%;">
+                        </div>
+                        <div class="card-footer">
+                            <h4 class="text-success"> Education and Working Exp </h4>
+                                <ol>
+                                    <li> Completed Btech 2010 From ANU.</li>
+                                    <li> Worked in different Companies.</li>
+                                    <li> Started <b>NARAYANA Tech House</b>.</li>
+                                    <li> Giving Training on Python Full Stack</li>
+                                </ol>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    {% endblock %}
+    </body>
+</html>

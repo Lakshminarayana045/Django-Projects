@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>mainpage</title>
+    {% include 'cdlines.html' %}
+  </head>
+  <div class="jumbotorns bg-secondary" style="color:white">
+    <body class="m-5">
+        <h1 class="text-center mt-5"><u><b>MY To_Do List</b></u></h1>
+        {% if data %}
+        <table class="table table-bordered" style="color:white">
+          <thead>
+            <tr>
+              <th>Task Date</th>
+              <th>Task Title</th>
+              <th>Taskdescription</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for i in data %}
+            <tr>
+              <td>{{i.selectdata}}</td>
+              <td>{{i.title}}</td>
+              <td>{{ i.taskdescription }}</td>
+              <td>
+                <a href="{% url 'updatedata' i.id %}" class="btn btn-outline-light">Update</a>
+                <a href="{% url 'deletedata' i.id %}" class="btn btn-outline-light">Delete</a>
+              </td>
+            </tr>
+            {% endfor %}|
+            </tbody>
+        </table>
+        {% else %}
+        <h1 class="text-center m-5">No Task's Avilable</h1>
+        {% endif %}
+        <center>
+        <a href="{% url 'formpage' %}" class=" btn btn-outline-light mt-5">Add New Task</a>
+        </center>
+    </body>
+  </div>
+</html>

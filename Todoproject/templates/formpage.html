@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>form</title>
+    {% include 'cdlines.html' %}
+</head>
+<style>
+    form{margin:20px;padding:20px;
+      border-top:10px green dotted;border-right:10px purple double;
+      border-left:8px blue dashed;border-bottom:10px red ridge;
+      border-radius:10px;}
+    input[value],[name]{margin:10px;padding:10px;}
+</style>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="offset-md-4 col-md-5 mt-5">
+            <form method="POST">
+              <h1 class="text-center mb-4">Add Task</h1>
+                {% csrf_token %}
+                <label>Enter Task Title:</label>
+                <input type="text" name="title" class="form-control">
+                <label>Select Date:</label>
+                <input type="date" name="date" class="form-control">
+                <label>Enter Task Description:</label>
+                <input type="text" name="description" class="form-control">
+                <center>
+                <input type="submit" value="Submit" class="btn btn-outline-success">
+                <input type="reset" value="Clear" class="btn btn-outline-danger">
+                </center>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Data</title>
+        {% include 'cd.html' %}
+    </head>
+    <style>
+        table,th,td,tr{border: 5px double black ;text-align: center}
+        #heading{width: fit-content;}
+        tbody:hover {background-color:white}
+        thead{background-image:linear-gradient(90deg,rgb(233, 115, 115),rgb(239, 239, 149),rgb(129, 234, 129));}
+        h1,a{background-image:linear-gradient(90deg,rgb(207, 159, 233),rgb(234, 102, 102),rgb(239, 239, 149));}
+        html,body{background-image:linear-gradient(90deg,rgb(242, 198, 116),rgb(207, 159, 233),rgb(172, 172, 229),rgb(233, 141, 233),rgb(234, 102, 102))}
+    </style>
+
+    <body>
+        <div class="container-fluid">
+            <div id="heading" class="offset-md-4 col-md-5">
+                <h1 class="m-4">NTH Employees Data</h1>
+            </div>
+        </div>
+        
+        {% if data %}
+        <table class="table">
+            <thead>
+               <tr>
+                    <th>ID</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Salary</th>
+                    <th>Company</th>
+                    <th>Location</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            {% for i in data %}
+            <tbody>
+                <tr>
+                    <td>{{ i.id }}</td>
+                    <td>{{ i.first_name }}</td>
+                    <td>{{ i.last_name }}</td>
+                    <td>{{ i.salary }}</td>
+                    <td>{{ i.company }}</td>
+                    <td>{{ i.location }}</td>
+                    <td><a href="{% url 'delete' i.id %}" class="btn btn-sm">Delete</a></td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+        {% else %}
+        <h2 class="text-center mt-5">No data avaliable</h2>
+        {% endif %}
+        
+    </body>
+</html>

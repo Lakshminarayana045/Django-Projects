@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    {% include 'cd.html' %}
+</head>
+    <body>
+        <div class="jumbotron text-center m-5">
+            <a href="http://127.0.0.1:8000/admin" class="btn btn-lg btn-outline-primary m-2">Admin</a>
+            <a href="{% url 'datapage' %}" class="btn btn-lg btn-outline-danger">Data</a>
+        </div>
+        
+    </body>
+</html>

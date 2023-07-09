@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+<h1>Hello NTH</h1>
+{% block content %}
+<div class="container-fluid">
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      {{ formset.as_p }}
+
+      <input type="submit" value="Create" class="btn btn-success">
+      <input type="reset" value="Cancel" class="btn btn-danger">
+    </form>
+    </div>
+{% endblock %}

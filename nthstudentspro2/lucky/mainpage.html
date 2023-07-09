@@ -1,0 +1,98 @@
+<html>
+<head>
+    <title>main form</title>
+    {% include 'cdnlines.html' %}
+</head>
+<style>
+ form{
+    margin:20px;
+    padding:20px;
+    border:5px green solid;
+    color:red;
+   }
+   input[value]{
+margin-top:10px;
+padding:-10px;}
+input[name]{
+margin-top:10px;
+}
+table{
+margin:-550px;
+margin-left:300px;
+}
+
+    </style>
+<body>
+<h1 class="text-center dispaly-3 font-weight-bold">Welcome To Narayana Tech House</h1>
+<div class="container-fluid">
+    <div class="row">
+        <div class=" col-md-3">
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="fname" placeholder="firstname" class="form-control">
+    <input type="text" name="lname" placeholder="lastname" class="form-control">
+    <input type="text" name="cname" placeholder="coursename" class="form-control">
+    <input type="email" name="email" placeholder="emailid" class="form-control">
+    <input type="number" name="mobile" placeholder="mobile" class="form-control">
+    <input type="text" name="htown" placeholder="hometown" class="form-control">
+    <input type="text" name="qualification" placeholder="qualification" class="form-control">
+    <input type="number" name="percentage" placeholder="percentage" class="form-control">
+    <input type="number" name="pyear" placeholder="passedoutyear" class="form-control">
+    <center>
+        <input type="submit" value="submit" class="btn btn-outline-success">
+        <input type="reset" value="clear" class="btn btn-outline-danger">
+    </center>
+
+</form>
+      <div class="row">
+      <div class="col-md-9">
+          {% if data %}
+ <table class="table table-bordered display-6">
+     <thead>
+     <tr>
+         <th>firstname</th>
+         <th>lastname</th>
+         <th>coursename</th>
+         <th>emailid</th>
+         <th>mobile</th>
+         <th>hometown</th>
+         <th>qualification</th>
+         <th>percentage</th>
+         <th>passedoutyear</th>
+         <th>Actions</th>
+
+     </tr>
+     </thead>
+     <tbody>
+     {% for i in data %}
+     <tr>
+         <td>{{i.firstname}}</td>
+         <td>{{i.lastname}}</td>
+         <td>{{i.coursename}}</td>
+         <td>{{i.emailid}}</td>
+         <td>{{i.mobile}}</td>
+         <td>{{i.hometown}}</td>
+         <td>{{i.qualification}}</td>
+         <td>{{i.percentage}}</td>
+         <td>{{i.passedoutyear}}</td>
+         <td>
+           <a href="{% url 'update' i.id %}">Update</a>
+           <a href="#">Delete</a>
+
+         </td>
+
+     </tr>
+     {% endfor %}
+     </tbody>
+
+ </table>
+          {% else %}
+          <h1 class="text-center">No Data</h1>
+          {% endif %}
+ </div>
+ </div>
+ </div>
+ </div>
+</div>
+</body>
+</html>

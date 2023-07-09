@@ -1,0 +1,99 @@
+<head>
+  <title>student management application</title>
+  {% include 'cdnlines.html' %}
+</head>
+<style media="screen">
+  form{
+    border:4px solid pink;
+    padding:10px;
+    border-radius:25px;
+    align-content:center;
+    background-color: rgb(228, 154, 102);
+  }
+  
+ 
+  h1{
+    text-align: center;
+    text-decoration: underline;
+    color: black;
+  }
+</style>
+<body>
+  <h1>StudentManagementApplication</h1>
+  <div class="container-fluid mt-5 ">
+    <div class="row">
+      <div class=" col-md-5">
+        <form class=""  method="POST">
+          {% csrf_token %}
+          <label>Name</label>
+          <input type="text" name="name" class='form-control' placeholder="enter your first name">
+          <label>roll_no</label>
+          <input type="number" name="rollno" class='form-control' placeholder="enter your roll no">
+          <label>dob</label>
+          <input type="date" name="dob" class='form-control' placeholder="enter your dob">
+          <label>marks_percentage</label>
+          <input type="text" name="mpercentage" class='form-control' placeholder="enter your marks percentage">
+          <label>class_group</label>
+          <input type="text" name="cgroup" class='form-control' placeholder="enter your class group">
+          <label>father_name</label>
+          <input type="text" name="fname"class='form-control' placeholder="enter your father name">
+          <div>
+            <input type="submit"  value="SUBMIT" class='btn-success btn-md btn mt-4'>
+            <input type="reset"  value="CANCEL" class='btn-danger btn-md btn mt-4'>
+          </div>
+
+
+        </form>
+
+      </div>
+      <div class=" col-md-6">
+        {% if data %}
+        <table class='table table-bordered table-hover'>
+          <thead>
+            <tr>
+              <th>name</th>
+              <th>roll_no</th>
+              <th>dob</th>
+              <th>marks_percentage</th>
+              <th>class_group</th>
+              <th>father_name</th>
+              <th>    modifications</th>
+            </tr>
+          </thead>
+          <tbody>
+              {% for i in data %}
+            <tr>
+              <td>{{ i.Name }}</td>
+              <td>{{ i.roll_no }}</td>
+              <td>{{ i.dob }}</td>
+              <td>{{ i.marks_percentage }}</td>
+              <td>{{ i.class_group }}</td>
+              <td>{{ i.father_name }}</td>
+              <td>
+              <center>
+               <a href="" class="btn btn-success btn-sm" id="b">UPDATE</a>
+               <a href="" class="btn btn-danger mt-2 btn-sm" id="b">DELETE</a>
+              </center>
+              </td>
+              {% endfor %}
+            </tr>
+          </tbody>
+        </table>
+        {% else %}
+        <h3>no data avilable</h3>
+        {% endif %}
+
+
+      </div>
+
+    </div>
+
+  </div>
+  
+
+  </div>
+  <div>
+   <a href="{% url 'cal' %}">calculate percentage</a>
+  </div>
+  
+</body>

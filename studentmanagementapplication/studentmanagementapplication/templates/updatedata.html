@@ -1,0 +1,48 @@
+<head>
+  <title>student management application</title>
+  {% include 'cdnlines.html' %}
+</head>
+<style media="screen">
+  form{
+    border:4px solid pink;
+    padding:10px;
+    border-radius:25px;
+    align-content:center;
+  }
+  body{
+    display:flex;
+  }
+</style>
+<body>
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6">
+        <form  method="POST">
+          {% csrf_token %}
+          <label>Name</label>
+          <input type="text" name="name" class='form-control' placeholder="enter your first name" value="{{ data.Name }}">
+          <label>roll_no</label>
+          <input type="number" name="rollno" class='form-control' placeholder="enter your roll no" value="{{ data.roll_no }}">
+          <label>dob</label>
+          <input type="date" name="dob" class='form-control' placeholder="enter your dob" value="{{ data.dob }}">
+          <label>marks_percentage</label>
+          <input type="text" name="mpercentage" class='form-control' placeholder="enter your marks percentage" value="{{ data.marks_percentage }}">
+          <label>class_group</label>
+          <input type="text" name="cgroup" class='form-control' placeholder="enter your class group" value="{{ data.class_group }}">
+          <label>father_name</label>
+          <input type="text" name="fname"class='form-control' placeholder="enter your father name" value="{{ data.father_name }}">
+          <div class="text-center">
+          <input type="submit"  value="UPDATE" class='btn-success btn-md btn'>
+          <input type="reset"  value="CLEAR" class='btn-danger btn-md btn mt-4'>
+          </div>
+
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>

@@ -1,0 +1,55 @@
+<head>
+  <title>Welcome To Narayana Tech House</title>
+  {% include 'cdnlines.html' %}
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="border border-success">
+      <marquee><h1 class='font-weight-bold bg-danger'>Welcome To Narayana Tech House</h1></marquee>
+    </div>
+    <div class="text-right">
+      <a href="{% url 'addingstudent' %}" class='btn btn-outline-success'>Adding New Student</a>
+     {% if cake %}
+     <table class='table'>
+       <thead>
+         <tr>
+           <th>firstname</th>
+           <th>lastname</th>
+           <th>coursename</th>
+           <th>emailid</th>
+           <th>mobile</th>
+           <th>hometown</th>
+           <th>qualification</th>
+           <th>percentage</th>
+           <th>passedoutyear</th>
+           <th>
+             actions
+           </th>
+         </tr>
+         <tbody>
+           {% for i in cake %}
+           <tr>
+             <td>{{ i.firstname }}</td>
+             <td>{{ i.lastname }}</td>
+             <td>{{ i.coursename }}</td>
+             <td>{{ i.emailid }}</td>
+             <td>{{ i.mobile }}</td>
+             <td>{{ i.hometown }}</td>
+             <td>{{ i.qualification }}</td>
+             <td>{{ i.percentage }}</td>
+             <td>{{ i.passedoutyear}}</td>
+             <td>
+               <a href="{% url 'update' i.id %}" class='btn-sm btn-outline-success'>Update</a>
+               <a href="{% url 'delete' i.id %}" class='btn-sm btn-outline-danger'>Delete</a>
+             </td>
+             {% endfor %}
+           </tr>
+         </tbody>
+       </thead>
+     </table>
+     {% else %}
+     <h1 class="text-center">NO DATA AVLAIBLE HERE</h1>
+     {% endif %}
+    </div>
+  </div>
+</body>

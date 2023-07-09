@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Python</title>
+    {% include 'cdnlines.html' %}
+  </head>
+  <style media="screen">
+    h1{color:violet}
+  </style>
+  <body class="bg-secondary">
+    <h1 class="text-center"><b><u>Java</u></b></h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1 class="text-center"><b>Course Details</b></h1>
+          <div class="jumbotron">
+            <h5>Course Name    :Java</h5>
+            <h5>Course Fee     : 20000/-</h5>
+            <h5>CourseStartDate:23-04-2023</h5>
+            <h5>Course Duration: 6-8 months</h5>
+            <h5>Class Timings  : 11.00 am</h5>
+            <h5>Course Trainer : Mr.Hari Krishna</h5>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h1 class="text-center"><b>Course Highlights</b></h1>
+          <div class="jumbotron">
+            <h5>Core Java & Advanced Java</h5>
+            <h5>Java Modules</h5>
+            <h5>Mock-Interviews</h5>
+            <h5>Python Project & Main Project</h5>
+            <h5>Arithmetic & Reasoning</h5>
+            <h5>Assignments & Programming Tests</h5>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <h1 class="text-center"><b>Course Features</b></h1>
+          <div class="jumbotron">
+            <h5>Platform Independency</h5>
+            <h5>Security</h5>
+            <h5>Simplicity</h5>
+            <h5>Object Oriented</h5>
+            <h5>Reliability</h5>
+            <h5>Multi-threading</h5>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h1 class="text-center"><b>Trainer Details</b></h1>
+          <div class="jumbotron">
+            <h5>Mr.Hari Krishna</h5>
+            <h5>Java Full-Stack </h5>
+            <h5>Best Trainer</h5>
+            <h5>7 + yrs of Exp</h5>
+            <h5>Real Time Expert</h5>
+            <h5>Good Motivator </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4"><a href="{% url 'python' %}" class="btn btn-primary">Python</a></div>
+        <div class="col-md-4 text-center"><a href="{% url 'mainpage' %}" class="btn btn-outline-primary">Mainpage</a></div>
+        <div class="col-md-4 text-right"><a href="{% url 'c' %}" class="btn btn-primary">C-Language</a></div>
+      </div>
+    </div>
+  </body>
+</html>

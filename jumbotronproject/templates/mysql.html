@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Python</title>
+    {% include 'cdnlines.html' %}
+  </head>
+  <body>
+    <h1 class="text-center"><b><u>MySQL</u></b></h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1 class="text-center"><b>Course Details</b></h1>
+          <div class="jumbotron">
+            <h5>Course Name    :Mysql</h5>
+            <h5>Course Fee     : 5000/-</h5>
+            <h5>CourseStartDate:25-04-2023</h5>
+            <h5>Course Duration: 3-4 months</h5>
+            <h5>Class Timings  : 8.30 am</h5>
+            <h5>Course Trainer : Mr.Laksmi Narayana</h5>
+          </div>
+
+        </div>
+        <div class="col-md-6">
+          <h1 class="text-center"><b>Course Highlights</b></h1>
+          <div class="jumbotron">
+            <h5>MySql</h5>
+            <h5>Quarys</h5>
+            <h5>Mock-Interviews</h5>
+            <h5>SQl Project</h5>
+            <h5>Arithmetic & Reasoning</h5>
+            <h5>Assignments & Programming Tests</h5>
+          </div>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <h1 class="text-center"><b>Course Features</b></h1>
+          <div class="jumbotron">
+            <h5>Data Dictionary</h5>
+            <h5>SQL Roles</h5>
+            <h5>Limitations</h5>
+            <h5>Cloud Deployment</h5>
+            <h5>Connectors</h5>
+            <h5>High Availablity</h5>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <h1 class="text-center"><b>Trainer Details</b></h1>
+          <div class="jumbotron">
+            <h5>Mr.Laksmi Narayana</h5>
+            <h5>Data Base Developer</h5>
+            <h5>Best Trainer</h5>
+            <h5>5+ yrs of Exp</h5>
+            <h5>Real Time Expert</h5>
+            <h5>good motivator </h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4"><a href="{% url 'c' %}" class="btn btn-danger">C-Language</a></div>
+        <div class="col-md-4 text-center"><a href="{% url 'mainpage' %}" class="btn btn-outline-danger">Mainpage</a></div>
+        <div class="col-md-4 text-right"><a href="{% url 'python' %}" class="btn btn-danger">Python</a></div>
+      </div>
+    </div>
+  </body>
+</html>

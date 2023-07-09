@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Main</title>
+    {% include 'cdnlines.html' %}
+  </head>
+  <style media="screen">
+    .jumbotron{ margin:20px 70px 80px; }
+    h1{margin-top:20px;border:10px groove red;padding: 10px;color: green; border-radius: 100px}
+    a{margin-right: 20px}
+  </style>
+  <body class="bg-info">
+    <h1 class="text-center"><b>Welcome To Narayana Tech House</b></h1>
+    <div class="jumbotron text-center bg-warning">
+      <a href="{% url 'python' %}" class="btn btn-outline-danger "><span class="spinner-grow spinner-grow-sm"></span></span>Python</a>
+      <a href="{% url 'java' %}" class="btn btn-outline-primary"><span class="spinner-grow spinner-grow-sm"></span></span>Java</a>
+      <a href="{% url 'c' %}" class="btn btn-outline-success"><span class="spinner-grow spinner-grow-sm"></span></span>C-Language</a>
+      <a href="{% url 'mysql' %}" class="btn btn-outline-secondary"><span class="spinner-grow spinner-grow-sm"></span>MySql</a><br><br><br>
+      <a href="{% url 'form' %}" class="text-center"><span class="spinner-grow spinner-grow-sm"></span>Click Here</a><i>To enter your details</i>
+    </div>
+  </body>
+</html>

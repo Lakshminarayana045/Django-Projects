@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Form</title>
+    {% include 'cdnlines.html' %}
+  </head>
+  <style media="screen">
+    input[placeholder]:hover{ background-color: gray;}
+    form{box-shadow:0px 0px 50px green;border:10px groove red;border-radius:10%;
+      padding:10px;}
+  </style>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="offset-md-3 col-md-5 mt-5">
+          <marquee><h1 class="text-center mt-5">Fill Your Details</h1></marquee>
+          <form method="POST" class="mb-5">
+            {% csrf_token %}
+            <h1 class="text-center"><b>NTH</b></h1>
+            <input type="text" name="fname" class="form-control mb-2"  placeholder="Frist Name">
+            <input type="text" name="lname" class="form-control mb-2" placeholder="Last Name">
+            <input type="text" name="cname" class="form-control mb-2" placeholder="Course Name">
+            <input type="number" name="mobile" class="form-control mb-2" placeholder="Mobile No">
+            <input type="text" name="email" class="form-control mb-2" placeholder="Email Id">
+            <input type="text" name="qua" class="form-control mb-2" placeholder="Qualification">
+            <input type="number" name="poy" class="form-control mb-2" placeholder="PassOutYear">
+            <center>
+              <input type="submit" name="Submit" class="btn btn-outline-success mt-3">
+              <input type="reset" name="Cancel" class="btn btn-outline-danger mt-3"><br>
+              <a href="{% url 'mainpage' %}" class="btn btn-outline-primary mb-1 mt-3">Mainpage</a>
+            </center>
+          </form>
+      </div>
+    </div>
+  </body>
+</html>

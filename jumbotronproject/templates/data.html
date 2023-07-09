@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Data</title>
+    {% include 'cdnlines,html' %}
+  </head>
+  <body>
+    <div class="container">
+          <div class="col-md-9">
+            {% if data %}
+            <table class="table table-bordered display-6">
+              <thead>
+               <tr>
+                   <th>firstname</th>
+                   <th>lastname</th>
+                   <th>coursename</th>
+                   <th>mobile</th>
+                   <th>emailid</th>
+                   <th>qualification</th>
+                   <th>passedoutyear</th>
+               </tr>
+             </thead>
+             <tbody>
+               {% for i in data %}
+               <tr>
+                   <td>{{i.firstname}}</td>
+                   <td>{{i.lastname}}</td>
+                   <td>{{i.coursename}}</td>
+                   <td>{{i.mobile}}</td>
+                   <td>{{i.emailid}}</td>
+                   <td>{{i.qualification}}</td>
+                   <td>{{i.passedoutyear}}</td>
+               </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          {% else %}
+          <h1 class="text-center">No Data</h1>
+          {% endif %}
+     </div>
+
+  </body>
+</html>

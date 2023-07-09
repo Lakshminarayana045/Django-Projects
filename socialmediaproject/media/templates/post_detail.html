@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    {% include 'cdnlines.html' %}
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <h2>{{ post.title }}</h2>
+        <hr>
+        {{ post.body }} <br>
+        <div id="likes_section"> {% include 'likes.html' %} </div>
+      </div>
+
+      <div class="row">
+          {% for p in post.images_set.all %}
+            <div class="col-md-3">
+                <img src="{{ p.image.url }}" class="img-thumbnail">
+            </div>
+          {% endfor %}
+      </div>
+
+      <div class="section_edit" style="float:right">
+          <a href="{% url 'post_edit' id=post.id %}">
+          <button type="button" class ="btn btn-outline-success btn-lg">Edit</button>
+          </a>
+          <a href="{% url 'post_delete' id=post.id %}">
+          <button type="button" class ="btn btn-outline-danger btn-lg">Delete</button>
+          </a>
+      </div>
+
+      </div>
+    </div>
+  </body>
+</html>
